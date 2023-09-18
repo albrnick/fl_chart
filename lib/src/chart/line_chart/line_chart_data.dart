@@ -68,11 +68,11 @@ class LineChartData extends AxisChartData with EquatableMixin {
               maxX ?? LineChartHelper.calculateMaxAxisValues(lineBarsData).maxX,
           minY:
               minY ?? NiceScale( LineChartHelper.calculateMaxAxisValues(lineBarsData).minY,
-                                 LineChartHelper.calculateMaxAxisValues(lineBarsData).maxY,
+                                 maxY ?? LineChartHelper.calculateMaxAxisValues(lineBarsData).maxY,
                                  10).niceMin,
                       // LineChartHelper.calculateMaxAxisValues(lineBarsData).minY,
           maxY:
-              maxY ?? NiceScale( LineChartHelper.calculateMaxAxisValues(lineBarsData).minY,
+              maxY ?? NiceScale( minY ?? LineChartHelper.calculateMaxAxisValues(lineBarsData).minY,
                                  LineChartHelper.calculateMaxAxisValues(lineBarsData).maxY,
                                  10).niceMax,
                       // LineChartHelper.calculateMaxAxisValues(lineBarsData).maxY,
