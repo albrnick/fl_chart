@@ -309,8 +309,8 @@ class NiceScale {
     _calculate();
   }
 
-  double _niceMin, _niceMax;
-  double _tickSpacing;
+  late double _niceMin, _niceMax;
+  late double _tickSpacing;
 
   double get tickSpacing => _tickSpacing;
 
@@ -318,9 +318,9 @@ class NiceScale {
 
   double get niceMax => _niceMax;
 
-  double _minPoint, _maxPoint;
-  double _maxTicks;
-  double _range;
+  late double _minPoint, _maxPoint;
+  late double _maxTicks;
+  late double _range;
 
   void _calculate() {
     _range = _niceNum(_maxPoint - _minPoint, false);
