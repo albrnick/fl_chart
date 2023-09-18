@@ -303,9 +303,13 @@ class Utils {
 /// From: https://stackoverflow.com/questions/8506881/nice-label-algorithm-for-charts-with-minimum-ticks/63709379#63709379
 class NiceScale {
   NiceScale(double minP, double maxP, double maxTicks) {
-    this._minPoint = minP;
-    this._maxPoint = maxP;
-    this._maxTicks = maxTicks;
+    _minPoint = minP;
+    _maxPoint = maxP;
+    _maxTicks = maxTicks;
+    // Handle edge case
+    if (_minPoint == _maxPoint) {
+      _maxPoint += 1;
+    }
     _calculate();
   }
 
