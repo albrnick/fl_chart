@@ -66,9 +66,15 @@ class LineChartData extends AxisChartData with EquatableMixin {
           maxX:
               maxX ?? LineChartHelper.calculateMaxAxisValues(lineBarsData).maxX,
           minY:
-              minY ?? LineChartHelper.calculateMaxAxisValues(lineBarsData).minY,
+              minY ?? NiceScale( LineChartHelper.calculateMaxAxisValues(lineBarsData).minY,
+                                 LineChartHelper.calculateMaxAxisValues(lineBarsData).maxY,
+                                 10).niceMin,
+                      // LineChartHelper.calculateMaxAxisValues(lineBarsData).minY,
           maxY:
-              maxY ?? LineChartHelper.calculateMaxAxisValues(lineBarsData).maxY,
+              maxY ?? NiceScale( LineChartHelper.calculateMaxAxisValues(lineBarsData).minY,
+                                 LineChartHelper.calculateMaxAxisValues(lineBarsData).maxY,
+                                 10).niceMax,
+                      // LineChartHelper.calculateMaxAxisValues(lineBarsData).maxY,
         );
 
   /// [LineChart] draws some lines in various shapes and overlaps them.
